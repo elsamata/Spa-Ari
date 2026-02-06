@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spa Ari</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="spa.css">
+</head>
+<body>
+    <!-- Pantalla de Login -->
+    <div id="login-screen">
+        <div class="login-container">
+            <h2>Spa Ari</h2>
+            <p>Bienvenido a tu spa de confianza</p>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn-login">Ingresar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div id="main-content" style="display: none;">
+        <!-- Navegación -->
+        <nav>
+            <div class="container">
+                <div class="logo">Ari</div>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <button class="btn-logout" onclick="logout()">Cerrar Sesión</button>
+            </div>
+        </nav>
+
+        <!-- Sección Hero -->
+        <section id="inicio">
+            <div class="hero-content">
+                <h1>SPA ARI</h1>
+                <p>ENCUENTRA TU PAZ INTERIOR</p>
+            </div>
+        </section>
+
+        <!-- Sección de Servicios -->
+        <section id="servicios">
+            <div class="container">
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <p class="section-subtitle">Experiencias diseñadas para tu bienestar completo</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Masajes Terapéuticos</h3>
+                        <p>Libera tensiones acumuladas con nuestras técnicas especializadas de masaje. Cada sesión está personalizada para atender tus necesidades específicas de relajación y recuperación muscular.</p>
+                        <p class="service-price">$850 MXN</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>Tratamientos Faciales</h3>
+                        <p>Rejuvenece tu piel con nuestros tratamientos faciales premium. Utilizamos productos naturales y técnicas avanzadas para restaurar la luminosidad y salud de tu rostro.</p>
+                        <p class="service-price">$1,200 MXN</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>Aromaterapia</h3>
+                        <p>Experimenta el poder curativo de los aceites esenciales. Nuestras sesiones de aromaterapia combinan aromas naturales con masajes suaves para equilibrar cuerpo y mente.</p>
+                        <p class="service-price">$950 MXN</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>Hidroterapia</h3>
+                        <p>Sumérgete en la relajación con nuestros circuitos de hidroterapia. Alterna entre temperaturas para estimular la circulación y eliminar toxinas de manera natural.</p>
+                        <p class="service-price">$1,100 MXN</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>Yoga & Meditación</h3>
+                        <p>Conecta con tu interior a través de clases guiadas de yoga y meditación. Fortalece tu cuerpo mientras encuentras paz mental en un ambiente tranquilo.</p>
+                        <p class="service-price">$600 MXN</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>Paquetes Premium</h3>
+                        <p>Disfruta de una experiencia completa con nuestros paquetes que combinan múltiples servicios. El día perfecto de relajación diseñado especialmente para ti.</p>
+                        <p class="service-price">$3,500 MXN</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Galería -->
+        <section id="galeria">
+            <div class="container">
+                <h2 class="section-title">Galería</h2>
+                <p class="section-subtitle">Conoce nuestras instalaciones</p>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openModal('imagen1.jpg', 'Sala de Masajes')">
+                        <img src="imagen1.jpg" alt="Sala de Masajes">
+                        <div class="gallery-overlay">
+                            <span>Sala de masajes</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('imagen2.jpg', 'Área de Relajación')">
+                        <img src="imagen2.jpg" alt="Área de Relajación">
+                        <div class="gallery-overlay">
+                            <span>Area de relajacion</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('imagen3.jpg', 'Piscina Termal')">
+                        <img src="imagen3.jpg" alt="Piscina Termal">
+                        <div class="gallery-overlay">
+                            <span>Piscina Termal</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('imagen4.jpg', 'Sauna Finlandesa')">
+                        <img src="imagen4.jpg" alt="Sauna Finlandesa">
+                        <div class="gallery-overlay">
+                            <span>Sauna Finlandesa</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('imagen5.jpg', 'Jardín Zen')">
+                        <img src="imagen5.jpg" alt="Jardín Zen">
+                        <div class="gallery-overlay">
+                            <span>Jardin Zen</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('imagen6.jpeg', 'Sala de Yoga')">
+                        <img src="imagen6.jpeg" alt="Sala de Yoga">
+                        <div class="gallery-overlay">
+                            <span>Sala de Yoga</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto">
+            <div class="container">
+                <h2 class="section-title">Contáctanos</h2>
+                <p class="section-subtitle">Estamos aquí para atenderte</p>
+                
+                <div class="contact-wrapper">
+                    <div class="contact-form">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="nombre">Nombre Completo</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="correo">Correo Electrónico</label>
+                                <input type="email" id="correo" name="correo" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="dudas">Dudas</label>
+                                <textarea id="dudas" name="dudas" required></textarea>
+                            </div>
+                            
+                            <div class="form-buttons">
+                                <button type="submit" class="btn-submit">Enviar</button>
+                                <button type="button" class="btn-clear" onclick="clearForm()">Limpiar</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="info-block">
+                            <h3>Ubicación</h3>
+                            <p>Nardos 14528, San Ramon</p>
+                            <p>Puebla, Pue 72490</p>
+                            <p>Puebla</p>
+                        </div>
+                        
+                        <div class="info-block">
+                            <h3>Horarios</h3>
+                            <p>Lunes a Viernes: 9:00 AM - 9:00 PM</p>
+                            <p>Sábados: 10:00 AM - 8:00 PM</p>
+                            <p>Domingos: 10:00 AM - 6:00 PM</p>
+                        </div>
+                        
+                        <div class="info-block">
+                            <h3>Contacto Directo</h3>
+                            <p>Tel: +52 2217054142</p>
+                            <p>Email: spaari@gmail.com</p>
+                        </div>
+                        
+                       <div class="map-container">
+                             <iframe 
+                                 src="https://www.google.com/maps?q=Nardos+14528+San+Ramon+Puebla&output=embed"
+                                 width="100%" 
+                                 height="100%" 
+                                 style="border:0;" 
+                                 allowfullscreen="" 
+                                 loading="lazy">
+                              </iframe>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal para imágenes -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-image" id="modal-image" src="" alt="">
+    </div>
+
+    <script>
+        // Sistema de Login
+        var loginForm = document.getElementById('login-form');
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            
+            if (username && password) {
+                document.getElementById('login-screen').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            }
+        });
+
+        // Función de Logout
+        function logout() {
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('login-screen').style.display = 'flex';
+            document.getElementById('login-form').reset();
+        }
+
+        // Scroll suave a secciones
+        var links = document.querySelectorAll('a[href^="#"]');
+        for (var i = 0; i < links.length; i++) {
+            links[i].addEventListener('click', function(e) {
+                e.preventDefault();
+                var targetId = this.getAttribute('href');
+                var targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+
+        // Abrir modal de imagen
+        function openModal(imageSrc, imageAlt) {
+            var modal = document.getElementById('modal');
+            var modalImg = document.getElementById('modal-image');
+            
+            modalImg.src = imageSrc;
+            modalImg.alt = imageAlt;
+            modal.style.display = 'flex';
+        }
+
+        // Cerrar modal
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Formulario de contacto
+        var contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto.');
+            this.reset();
+        });
+
+        // Limpiar formulario
+        function clearForm() {
+            document.getElementById('contact-form').reset();
+        }
+    </script>
+</body>
+</html>
